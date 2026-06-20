@@ -1,0 +1,18 @@
+source:
+  path: "C:\\Users\\Srilekha\\PycharmProjects\\taf_jan_march_2026\\taf_jan_march_2026\\input_files\\Contact_info.csv"
+  type: "csv"
+  file_config:
+    schema: "NA"
+    header: True
+    sep: ','
+    inferSchema: True
+target:
+  path: "C:\\Users\\Srilekha\\PycharmProjects\\taf_jan_march_2026\\taf_jan_march_2026\\input_files\\Contact_info.csv"
+  type: "csv"
+  file_config:
+    schema: "N"
+    header: True
+    sep: ','
+    inferSchema: False
+validation:
+  key_columns: ['sno']
