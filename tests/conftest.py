@@ -78,10 +78,10 @@ def spark_session():
              .config("spark.executor.extraClassPath", jar_path)
              .appName("ETL Automation FW").getOrCreate())
     print("\n this is end of spark session fixture")
-    #adls_account_name='stretaildev426'
+
     key = os.getenv("ADLS_TOKEN")
     adls_account_name= os.getenv('ADLS_ACCOUNT_NAME')
-    #key = '+l7+4HKylF4Sk1t1mu1vyvt3k3Ak+jHA0vkdawjITz4NIM3RhpTbU6yDzVE+4MhLl5jM9IeCyuCe+ASttZpC1g=='
+
     spark.conf.set(f"fs.azure.account.auth.type.{adls_account_name}.dfs.core.windows.net", "SharedKey")
     spark.conf.set(f"fs.azure.account.key.{adls_account_name}.dfs.core.windows.net", key)
     yield spark
