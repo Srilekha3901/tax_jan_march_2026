@@ -11,7 +11,6 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -23,11 +22,11 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Show Repository Structure
+      - name: Show Working Directory
         run: |
           pwd
           ls -la
-          find . -maxdepth 2 -type f
+          find . -name "requirements.txt"
 
       - name: Install Dependencies
         run: |
@@ -35,20 +34,10 @@ jobs:
           pip install -r requirements.txt
           pip list
 
-      - name: Verify dotenv Installation
+      - name: Verify python-dotenv
         run: |
-          python -c "from dotenv import load_dotenv; print('python-dotenv installed successfully')"
+          python -c "from dotenv import load_dotenv; print('python-dotenv is installed successfully')"
 
-      - name: Create Report Folder
-        run: mkdir -p reports
-
-      - name: Run Pytest
+      - name: Run Tests
         run: |
-          pytest -v -s --junitxml=reports/pytest-report.xml
-
-      - name: Upload Pytest Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: pytest-report
-          path: reports/pytest-report.xml
+          pytest -v -s
