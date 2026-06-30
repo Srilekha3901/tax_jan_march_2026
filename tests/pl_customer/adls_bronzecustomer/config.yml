@@ -1,24 +1,25 @@
 source:
   path: "abfss://raw@stretaildev0309.dfs.core.windows.net/customer/"
   type: "csv"
+  transformation : ["Y","python"]
   file_config:
-    schema: "N"
+    schema: "Y"
     header: True
     sep: ","
     inferSchema: True
   exclude_cols: ['']
 target:
   type: "database"
-  transformation : ["N","NA"]
+  transformation : ["y","sql"]
   table: "[Bronze].[Customer_Bronze]"
   env: "qa"
-  exclude_cols: ['HashKey','SourceFilename','InsertDate']
+  exclude_cols: ['HashKey','SourceFileName','InsertDate','rn']
 validation:
   key_columns: ['Customer_ID']
   primary_keys: ['Customer_ID']
   unique_cols: ['Customer_ID', 'Email']
   not_null_cols: ['Customer_ID', 'PhoneNumber']
-  regex_pattern_col: ['CustomerName','[a-zA-Z]']
+  regex_pattern_col: ['name','[a-zA-Z]']
   range_col: ['Customer_ID', 10,100]
 
 #source:

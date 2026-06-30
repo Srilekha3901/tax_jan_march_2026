@@ -1,0 +1,19 @@
+source:
+  type: "database"
+  transformation : ["Y","python"]
+  table: "[silver].[Customer_History_Expected]"
+  env: "qa"
+  exclude_cols: ['SourceFileName','InsertDate','UpdateDate','HashKey']
+target:
+  type: "database"
+  transformation : ["N","NA"]
+  table: "[silver].[Customer_History]"
+  env: "qa"
+  exclude_cols: ['SourceFileName','InsertDate','UpdateDate','HashKey','CustomerSK']
+validation:
+  key_columns: ['Customer_ID','IsCurrent']
+  primary_keys: ['Customer_ID','EffectiveStartDate']
+  unique_cols: []
+  not_null_cols: ['Customer_ID', 'PhoneNumber']
+  regex_pattern_col: ['name','[a-zA-Z]']
+  range_col: ['Customer_ID', 10,100]

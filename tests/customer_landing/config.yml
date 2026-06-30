@@ -1,5 +1,5 @@
 source:
-  path: "abfss://raw@stretaildev426.dfs.core.windows.net/customer/customer_27052026.csv"
+  path: "abfss://raw@stretaildev0309.dfs.core.windows.net/customer/customer_27052026.csv"
   type: "csv"
   file_config:
     schema: "N"

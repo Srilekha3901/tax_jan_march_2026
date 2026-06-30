@@ -1,0 +1,59 @@
+{
+  "type": "struct",
+  "fields": [
+    {
+      "name": "Customer_ID",
+      "type": "int",
+      "nullable": true,
+      "metadata": {}
+    },
+    {
+      "name": "CustomerName",
+      "type": "string",
+      "nullable": true,
+      "metadata": {}
+    },
+    {
+      "name": "Email",
+      "type": "string",
+      "nullable": true,
+      "metadata": {}
+    },
+    {
+      "name": "PhoneNumber",
+      "type": "string",
+      "nullable": true,
+      "metadata": {}
+    },
+    {
+      "name": "City",
+      "type": "string",
+      "nullable": true,
+      "metadata": {}
+    },
+    {
+      "name": "StateName",
+      "type": "string",
+      "nullable": true,
+      "metadata": {}
+    },
+    {
+      "name": "effectiveenddate",
+      "type": "timestamp",
+      "nullable": true,
+      "metadata": {}
+    },
+    {
+      "name": "effectivestartdate",
+      "type": "timestamp",
+      "nullable": true,
+      "metadata": {}
+    },
+    {
+      "name": "iscurrent",
+      "type": "boolean",
+      "nullable": true,
+      "metadata": {}
+    }
+  ]
+}
